@@ -65,7 +65,7 @@ public class DumpTransformer implements MyTransformer {
     private boolean classMatched(String className) {
         for (FilterRule rule : rules) {
             if (rule.test(className)) {
-                DebugInfo.output("Dump: " + className + ", rule: " + rule);
+                DebugInfo.info("Dump: " + className + ", rule: " + rule);
                 return true;
             }
         }
