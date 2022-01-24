@@ -17,7 +17,7 @@ public class DumpTransformer implements MyTransformer {
     public DumpTransformer(Environment env, List<FilterRule> rules) {
         this.env = env;
         this.rules = rules;
-        File dir = new File(env.getBaseDir(), "dumped-" + env.getAppName());
+        File dir = new File(env.getBaseDir(), env.getAppName().equals("") ? "dumped" : "dumped-" + env.getAppName());
 
         if (!dir.exists() && !dir.mkdirs()) {
             DebugInfo.error("Can't make directory: " + dir);
@@ -65,7 +65,7 @@ public class DumpTransformer implements MyTransformer {
     private boolean classMatched(String className) {
         for (FilterRule rule : rules) {
             if (rule.test(className)) {
-                DebugInfo.output("Dump: " + className + ", rule: " + rule);
+                DebugInfo.info("Dump: " + className + ", rule: " + rule);
                 return true;
             }
         }
