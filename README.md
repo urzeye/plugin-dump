@@ -1,6 +1,6 @@
 # plugin-dump
 
-### A plugin for the [ja-netfilter](https://github.com/ja-netfilter/ja-netfilter), it can dump the transformed classes.
+### A plugin for the [ja-netfilter](https://gitee.com/ja-netfilter/ja-netfilter), it can dump the transformed classes.
 
 #### Required: `ja-netfilter >= 2.2.1`
 
